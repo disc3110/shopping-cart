@@ -18,7 +18,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/shop"
+            to="checkout"
             className="text-gray-700 hover:text-blue-600 font-medium transition"
           >
             Shop
