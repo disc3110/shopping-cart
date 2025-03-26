@@ -13,9 +13,11 @@ export default function App() {
   },[])
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       < Navbar />
-      <Outlet context={{ products }} />
-    </>
+      <main className="flex-1 bg-amber-400">
+        <Outlet context={{ products }} />
+      </main>
+    </div>
   );
 }
