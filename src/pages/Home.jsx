@@ -1,16 +1,21 @@
 import { useOutletContext } from "react-router-dom";
+import Carousel from "../components/Carousel";
+import CategorieSection from "../components/CategorySection";
 
 const Home = () => {
     const { products } = useOutletContext();
+    const featuredProducts = products.filter((current) => {
+        if (current.rating.rate >= 4){
+            return current
+        }
+    })
+
+    console.log(featuredProducts)
 
     return(
         <>
-            <h2>Products</h2>
-            <ul>
-                {products.map(product => (
-                <li key={product.id}>{product.title}</li>
-                ))}
-            </ul>
+            <Carousel />
+            <CategorieSection />
         </>
     )
 }
