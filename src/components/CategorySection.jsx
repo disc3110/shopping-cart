@@ -1,6 +1,8 @@
 const CategorieSection = () => {
     return(
-        <></>
+        <>
+            <p>Catrgories</p>
+        </>
     )
 }
 
