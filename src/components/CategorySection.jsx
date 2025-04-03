@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-const CategorySection = ({ products }) => {
+const CategorySection = ({ products, addToCart }) => {
     // Group products by category
     const categories = products.reduce((acc, product) => {
         const category = product.category;
@@ -18,7 +18,7 @@ const CategorySection = ({ products }) => {
                     <h3 className="text-xl font-semibold mb-4">{category}</h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8">
                         {items.map((product, index) => (
-                            <ProductCard key={index} product={product} />
+                            <ProductCard key={index} product={product} addToCart={addToCart}/>
                         ))}
                     </ul>
                 </div>
