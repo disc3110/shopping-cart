@@ -29,11 +29,22 @@ export default function App() {
     });
   };
 
+  const updateQuantity = (productId, newQuantity) => {
+    setCart(prevCart => {
+      if (newQuantity <= 0) {
+        return prevCart.filter(item => item.id !== productId);
+      }
+      return prevCart.map(item =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      );
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       < Navbar />
       <main className="flex-1 bg-amber-400">
-        <Outlet context={{ products, cart, addToCart }} />
+        <Outlet context={{ products, cart, addToCart, updateQuantity }} />
       </main>
     </div>
   );
